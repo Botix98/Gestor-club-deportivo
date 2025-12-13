@@ -108,10 +108,19 @@ public class ServerThread extends Thread {
                 if (partes.length >= 2) {
                     switch(partes[1].toUpperCase()){
                         case "ADDCLUB":
-                        case "LISTCLUBES":
                             pw.println("PREOK " + codigo + " 209 localhost " + this.puertoDatos);
                             pw.flush();
                             gestionarDatos(partes[1].toUpperCase(), codigo, pw, "");
+                            break;
+                        case "LISTCLUBES":
+                            pw.println("PREOK " + codigo + " 209 localhost " + this.puertoDatos);
+                            pw.flush();
+
+                            gestionarDatos(partes[1].toUpperCase(), codigo, pw, "");
+                            if (Server.clubes.isEmpty()){
+                                pw.println("FAILED " + codigo + " 412 No hay clubes almacenados");
+                                pw.flush();
+                            }
                             break;
                         case "GETCLUB":
                         case "UPDATECLUB":

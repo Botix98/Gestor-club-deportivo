@@ -68,6 +68,10 @@ public class ServerThreadDatos extends Thread {
                     break;
                 case "LISTCLUBES":
                     enviarObjeto.writeObject(Server.clubes);
+                    if (!Server.clubes.isEmpty()){
+                        pw.println("OK " + codigo + " 208 Transferencia terminada");
+                        pw.flush();
+                    }
                     break;
             }
 

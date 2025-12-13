@@ -49,7 +49,9 @@ public class Cliente {
                             } else if (mensaje.split(" ")[0].equalsIgnoreCase("UPDATECLUB")) {
                                 updateClub(sc, enviarObjeto, br);
                             } else if (mensaje.split(" ")[0].equalsIgnoreCase("LISTCLUBES")) {
-                                listaClubes(recibirObjeto);
+                                if (!respuesta.startsWith("FAILED")){
+                                    listaClubes(recibirObjeto, br);
+                                }
                             } else {
                                 System.out.println(recibirObjeto.readObject());
                                 System.out.println(br.readLine());
@@ -83,13 +85,15 @@ public class Cliente {
         }
     }
 
-    private void listaClubes(ObjectInputStream recibirObjeto) throws IOException, ClassNotFoundException {
+    private void listaClubes(ObjectInputStream recibirObjeto, BufferedReader br) throws IOException, ClassNotFoundException {
         Map<String, Club> clubs = (Map<String, Club>) recibirObjeto.readObject();
-
+        
         System.out.println("Lista de clubes:");
         for (Club club : clubs.values()) {
             System.out.println(" - " + club);
         }
+
+        System.out.println(br.readLine());
     }
 
     private void addClub(Scanner sc, ObjectOutputStream enviarObjeto, BufferedReader br) throws IOException {

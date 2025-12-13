@@ -8,7 +8,8 @@
  - 207 -> El servidor confirma que el club ha sido actualizado correctamente
  - 208 -> El servidor confirma que se han enviado todos los datos
  - 209 -> El servidor envia la id y el puerto al cliente (PREOK)
- - 210 -> El usuario sale del programa
+ - 210 -> El servidor le indica al usuario que la lista de clubes no está vacia
+ - 211 -> El usuario sale del programa
 
 400:
  - 401 -> Para poder usar el comando PASS primero hay que usar el comando USER
@@ -21,4 +22,5 @@
  - 408 -> No se ha encontrado el ide del club a la hora de borrar uno
  - 409 -> El id del club al añadir uno nuevo ya está en uso
  - 410 -> No se encuentra el id del club a la hora de hacer UPDATECLUB o GETCLUB
- - 411 -> A la hora de añadir o modificar un club debe contener <id> y <nombre>.
+ - 411 -> A la hora de añadir o modificar un club debe contener <id> y <nombre>
+ - 412 -> No hay clubes almacenados en la lista
