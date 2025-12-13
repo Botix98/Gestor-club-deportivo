@@ -1,0 +1,24 @@
+200:
+ - 201 -> El servidor solicita contraseña al usuario
+ - 202 -> El servidor le da la bienvenida al usuario
+ - 203 -> El servidor envia el total de clubes al cliente
+ - 204 -> El servidor confirma que se borró el club indicado
+ - 205 -> El servidor envia al cliente el numero de sesiones iniciadas que hay
+ - 206 -> El servidor confirma que se creo el club indicado
+ - 207 -> El servidor confirma que el club ha sido actualizado correctamente
+ - 208 -> El servidor confirma que se han enviado todos los datos
+ - 209 -> El servidor envia la id y el puerto al cliente (PREOK)
+ - 210 -> El usuario sale del programa
+
+400:
+ - 401 -> Para poder usar el comando PASS primero hay que usar el comando USER
+ - 402 -> Usuario o contraseña incorrecta
+ - 403 -> Formato de comando incorrecto. Sobran o faltan partes del comando
+ - 404 -> Comando no valido (No existe el comando)
+ - 405 -> El comando esperado era PASS
+ - 406 -> Comando no se puede usar si no has iniciado sesion
+ - 407 -> Comando no se puede usar si has iniciado sesion
+ - 408 -> No se ha encontrado el ide del club a la hora de borrar uno
+ - 409 -> El id del club al añadir uno nuevo ya está en uso
+ - 410 -> No se encuentra el id del club a la hora de hacer UPDATECLUB o GETCLUB
+ - 411 -> A la hora de añadir o modificar un club debe contener <id> y <nombre>.

@@ -82,4 +82,9 @@ public class Club
     private String id;
     private String nombre;
     private Hashtable jugadores;
+
+    @Override
+    public String toString() {
+        return  "Club{" + "id=" + id + ", nombre=" + nombre + '}';
+    }
 }
