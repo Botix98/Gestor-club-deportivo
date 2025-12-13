@@ -10,7 +10,7 @@ public class Server {
     protected static ArrayList<String> listaComandosSinSesion = new ArrayList<>(Arrays.asList("USER", "PASS"));
     protected static ArrayList<String> listaComandosConSesion = new ArrayList<>(Arrays.asList("SESIONES", "ADDCLUB", "UPDATECLUB", "GETCLUB", "REMOVECLUB", "LISTCLUBES", "COUNTCLUBES"));
 
-    private int puertoDatos = 50001;
+    private int puertoDatos = 5001;
 
     public void ejecutar(){
         clubes.put("C1", new Club("C1", "Warriors"));
@@ -18,7 +18,7 @@ public class Server {
         clubes.put("C3", new Club("C3", "Los Mas Capitos"));
 
         System.out.println("Servidor Iniciado");
-        int puertoServer = 50000;
+        int puertoServer = 5000;
 
         try {
             ServerSocket serverSocket = new ServerSocket(puertoServer);

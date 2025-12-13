@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Cliente {
     public void ejecutar() {
         String server = "localhost";
-        int puerto = 50000;
+        int puerto = 5000;
         int numComandos = 0;
 
         try {

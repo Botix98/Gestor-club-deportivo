@@ -85,8 +85,7 @@ public class ServerThread extends Thread {
                             if (partes[1].equalsIgnoreCase("PASS")) {
                                 pw.println("FAILED " + codigo + " 401 Para usar el comando PASS, debes usar primero el comando USER");
                                 pw.flush();
-                            }
-                            if (Server.listaComandosConSesion.contains(partes[1].toUpperCase())) {
+                            } else if (Server.listaComandosConSesion.contains(partes[1].toUpperCase())) {
                                 pw.println("FAILED " + codigo + " 406 Inicia sesion para usar el comando");
                                 pw.flush();
                             } else{
